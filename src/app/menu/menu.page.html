@@ -1,0 +1,29 @@
+<ion-split-pane>
+	<ion-menu contentId="content" side="start" menuId="menu">
+		<ion-header no-border>
+			<ion-toolbar color="primary">
+				<ion-title>app.com</ion-title>
+			</ion-toolbar>
+		</ion-header>
+		<ion-content color="primary">
+			<ion-item-divider color="primary">Panel</ion-item-divider>
+
+			<ion-item detail lines="none" color="primary" *ngFor="let route of menu" [routerLink]="route.url"
+				routerLinkActive="active">
+				<ion-icon [name]="route.icon" slot="start"></ion-icon>
+				{{route.text}}
+			</ion-item>
+
+			<ion-item-divider color="primary">Account</ion-item-divider>
+
+			<ion-item detail lines="none" color="primary" *ngFor="let route of account" [routerLink]="route.url"
+				routerLinkActive="active">
+				<ion-icon [name]="route.icon" slot="start"></ion-icon>
+				{{route.text}}
+			</ion-item>
+
+		</ion-content>
+	</ion-menu>
+
+	<ion-router-outlet id="content" main></ion-router-outlet>
+</ion-split-pane>

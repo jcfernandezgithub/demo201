@@ -1,0 +1,49 @@
+<ion-content fullscreen>
+  <ion-grid no-padding class="row-h">
+    <ion-row no-padding class="row-h" justify-content-center>
+
+      <ion-col no-padding class="col-left" text-center justify-content-center align-self-center size="7">
+      </ion-col>
+
+      <ion-col class="col-right" text-center justify-content-center align-self-center size="5">
+
+        <ion-row class="row-h" justify-content-center>
+          <ion-col [formGroup]="form" size="8" align-self-center>
+
+            <ion-item no-padding margin-bottom lines="none" style="width: 250px;">
+              <ion-text class="welcome-message color-light" no-padding>
+                <strong>Bienvenido,</strong><br>
+                please login to your account.
+              </ion-text>
+            </ion-item>
+
+            <ion-item no-padding>
+              <ion-label position="floating">User</ion-label>
+              <ion-input formControlName="email" placeholder="Enter your username"></ion-input>
+              <ion-icon name="person" color="" slot="end" align-self-end></ion-icon>
+            </ion-item>
+
+            <ion-item no-padding>
+              <ion-label position="floating">Password</ion-label>
+              <ion-input formControlName="password"  type="password" placeholder="********"></ion-input>
+              <ion-icon name="person" slot="end" align-self-end></ion-icon>
+            </ion-item>
+
+            <ion-item lines="none">
+              <ion-button (click)="signin(form)" fill="clear" slot="end" [disabled]="!form.valid"><strong>Login</strong>
+                <ion-spinner name="lines-small" slot="end" size="small" [hidden]="spinner"></ion-spinner>
+              </ion-button>
+
+            </ion-item>
+
+            <!-- <ion-button size="medium" expand="block">login</ion-button> -->
+            <small routerLink="/forgot">Forgot password? Reset password.</small><br>
+            <small routerLink="/register">Not account yet. Register!</small>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

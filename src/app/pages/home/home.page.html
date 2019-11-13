@@ -1,0 +1,40 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-menu-button></ion-menu-button>
+		</ion-buttons>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<ion-grid>
+		<ion-row>
+			<ion-col size="12">
+
+				<ion-item lines="none">
+					<ion-label position="stacked">Buscar</ion-label>
+					<ion-input placeholder="John Wick.."></ion-input>
+					<ion-button align-self-end slot="end" fill="clear" (click)="create()" color="primary">Create new user</ion-button>
+				</ion-item>
+
+				<ion-list>
+					<ion-item *ngFor="let user of user_list">
+						<ion-thumbnail slot="start">
+							<img [src]="user.profileImage.fullPath" alt="">
+						</ion-thumbnail>
+						<ion-label>
+							<h2>{{user.name}}, {{user.last_name}}</h2>
+							<h3>{{user.email}}</h3>
+							<p>{{user.role | titlecase}}</p>
+						</ion-label>
+						<ion-button size="small" fill="clear" color="primary">View</ion-button>
+						<ion-button size="small" fill="clear" color="primary">Edit</ion-button>
+						<ion-button size="small" fill="clear" color="danger"><strong>Delete</strong></ion-button>
+					</ion-item>
+				</ion-list>
+
+			</ion-col>
+
+		</ion-row>
+	</ion-grid>
+</ion-content>
